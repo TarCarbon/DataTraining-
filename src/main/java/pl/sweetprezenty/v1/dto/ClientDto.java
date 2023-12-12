@@ -5,15 +5,18 @@ import lombok.Data;
 import pl.sweetprezenty.v1.entity.Client;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Builder
 @Data
 public class ClientDto {
+    private Long id;
     private String email;
     private String name;
     private String surname;
+
 
     public static List<ClientDto> from(Iterable<Client> clients){
         List<ClientDto> clientDtoList = new ArrayList<>();
